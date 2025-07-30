@@ -1,28 +1,47 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Random-film</title>
-    <link rel="icon" href="">
-    <link rel="apple-touch-icon" href="">
-    <link rel="stylesheet" href="./styles/style.css">
-</head>
-<body>
+    <link rel="icon" href="" />
+    <link rel="apple-touch-icon" href="" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="./styles/variables.css">
+    <link rel="stylesheet" href="./styles/global.css">
+  </head>
+  <body class="page">
+    <header class="header">
+      <h1 class="title_header">Watch</h1>
+    </header>
     <main class="main">
-        <div class="container">
-            <ul class="container-list">
-                <li class="container-item">
-                    <img src="" alt="" class="img">
-                </li>
-                <li class="container-item">
-                    <h1 class="h1">Watch</h1>
-                </li>
-                <li class="container-item">
-                    <button class="button">Случайный фильм</button>
-                </li>
-            </ul>
+      <button class="button_main">
+        <span class="button_text">Случайный фильма</span>
+      </button>
+      <div class="card-template">
+        <img src="" alt="" class="img-card" />
+        <div class="card-container">
+            <h2 class="card-title">Название фильма</h2>
+          <div class="card-desc">
+            <p class="card-year">Год: 2000</p>
+            <p class="card-raiting kp">Рейтинг кп: 8.5</p>
+            <p class="card-raiting imdb">Рейтинг имдб: 7</p>
+          </div>
+          <p class="card-text">описание фильма</p>
         </div>
+      </div>
     </main>
-</body>
+    <footer class="footer">
+      <p class="text_footer">
+        Directed by
+        <a href="https://github.com/ArdynIzunia13">Ardyn</a>
+      </p>
+    </footer>
+    <template id="button-template">
+      <button class="button_main">
+        <span class="button_text"></span>
+      </button>
+    </template>
+  </body>
+  <script src="./script/index.js"></script>
 </html>
