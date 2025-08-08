@@ -1,0 +1,45 @@
+.page {
+    min-inline-size: 320px;
+    min-block-size: 100dvb;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    color: var(--title-color);
+}
+.header {
+    padding: var(--padding);
+}
+.header-reload {
+    text-decoration: none;
+}
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    inline-size: 100%;
+    block-size: 100%;
+    gap: var(--padding);
+    padding: var(--padding);
+}
+.card-container {
+    padding: 20px;
+    border-radius: 2em;
+    background-color: red;
+    cursor: pointer;
+}
+.card-template {
+    display: flex;
+}
+.card-desc {
+    display: flex;
+    gap: 10px;
+}
+.button_main {
+    padding: 2em;
+    inline-size: clamp(16.6875rem, 16.4196rem + 1.3393vw, 17.625rem);
+    border-radius: 2em;
+    background-color: red;
+    cursor: pointer;
+}
