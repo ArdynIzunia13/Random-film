@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'BladeRunner';
+    src: url(./BLADRMF_.TTF) format('woff2'),
+         url(./BLADRMF_.TTF) format('woff'),
+         url(./BLADRMF_.TTF) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+

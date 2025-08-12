@@ -14,6 +14,11 @@
 .header-reload {
     text-decoration: none;
 }
+.title_header {
+    font-family: 'BladeRunner', sans-serif;
+    font-weight: 100;
+    font-size: 3em;
+}
 .main {
     display: flex;
     flex-direction: column;
@@ -24,17 +29,25 @@
     padding: var(--padding);
 }
 .card-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.card-template {
+    max-inline-size: 1024px;
+    display: flex;
+    gap: 20px;
     padding: 20px;
     border-radius: 2em;
     background-color: red;
     cursor: pointer;
 }
-.card-template {
-    display: flex;
-}
 .card-desc {
     display: flex;
     gap: 10px;
+}
+.card-text {
+
 }
 .button_main {
     padding: 2em;
@@ -42,4 +55,13 @@
     border-radius: 2em;
     background-color: red;
     cursor: pointer;
+}
+.button_text {
+     font-family: sans-serif;
+}
+.img-card {
+    inline-size: 136px;
+    block-size: 204px;
+    object-fit: cover;
+    object-position: center;
 }
