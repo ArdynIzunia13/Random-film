@@ -5,14 +5,13 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    background-color: black;
+    background-image: url(/public/eDbx9_65ELY.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
     color: var(--title-color);
 }
 .header {
     padding: var(--padding);
-}
-.header-reload {
-    text-decoration: none;
 }
 .title_header {
     font-family: 'BladeRunner', sans-serif;
@@ -46,9 +45,6 @@
     display: flex;
     gap: 10px;
 }
-.card-text {
-
-}
 .button_main {
     padding: 2em;
     inline-size: clamp(16.6875rem, 16.4196rem + 1.3393vw, 17.625rem);
@@ -64,4 +60,12 @@
     block-size: 204px;
     object-fit: cover;
     object-position: center;
+}
+.footer {
+    padding: 20px;
+}
+.text_footer {
+    font-family: 'BladeRunner';
+    font-weight: 100;
+    font-size: 20px;
 }
