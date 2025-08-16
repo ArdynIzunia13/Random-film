@@ -6,6 +6,8 @@
     justify-content: space-between;
     align-items: center;
     background-color: black;
+    background-repeat: no-repeat;
+    background-position: center;
     color: var(--title-color);
     background-position: center;
     background-repeat: no-repeat;
@@ -13,9 +15,6 @@
 }
 .header {
     padding: var(--padding);
-}
-.header-reload {
-    text-decoration: none;
 }
 .title_header {
     font-family: 'BladeRunner', sans-serif;
@@ -78,6 +77,9 @@
     block-size: 204px;
     object-fit: cover;
     object-position: center;
+}
+.footer {
+    padding: 20px;
 }
 .text_footer {
     font-family: 'BladeRunner';
