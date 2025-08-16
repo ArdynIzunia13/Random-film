@@ -33,6 +33,7 @@ picture {
 
 button,
 a {
+  text-decoration: none;
   color: currentColor;
   font-family: inherit;
   font-size: inherit;

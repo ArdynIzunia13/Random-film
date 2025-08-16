@@ -7,6 +7,9 @@
     align-items: center;
     background-color: black;
     color: var(--title-color);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .header {
     padding: var(--padding);
@@ -41,13 +44,17 @@
     border-radius: 2em;
     background-color: red;
     cursor: pointer;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.card-template.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 .card-desc {
     display: flex;
     gap: 10px;
-}
-.card-text {
-
 }
 .button_main {
     padding: 2em;
@@ -55,6 +62,13 @@
     border-radius: 2em;
     background-color: red;
     cursor: pointer;
+    border: 0;
+    transition: outline 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+.card-template:hover,
+.button_main:hover {
+    outline: 2px solid green;
+    box-shadow: 0 0 20px green;
 }
 .button_text {
      font-family: sans-serif;
@@ -64,4 +78,9 @@
     block-size: 204px;
     object-fit: cover;
     object-position: center;
+}
+.text_footer {
+    font-family: 'BladeRunner';
+    font-weight: 100;
+    font-size: 20px;
 }
