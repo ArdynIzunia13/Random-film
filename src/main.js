@@ -14,6 +14,7 @@ const containerElement = containerTemplate.querySelector('.card-template').clone
 const containerImg = containerElement.querySelector('.img-card')
 const containerTitle = containerElement.querySelector('.card-title')
 const containerYear = containerElement.querySelector('.card-year')
+const containerGenre = containerElement.querySelector('.card-genre')
 const containerRaiting = containerElement.querySelector('.card-raiting')
 const containerDesc = containerElement.querySelector('.card-text')
 
@@ -22,11 +23,14 @@ function renderCard(render) {
   // containerImg.src = render.posterUrl
   containerTitle.textContent = render.name || render.alternativeName || 'Без названия'
   containerYear.textContent = `Год: ${render.year}`
+  containerGenre.textContent = `Жанр: ${render.genres.map(genre => genre.name).join(", ")|| '-'}` 
   containerRaiting.textContent = `Рейтинг КиноПоиск: ${render.rating.kp || '-'}`
   containerElement.querySelector('.imdb').textContent = `Рейтинг IMDB: ${render.rating.imdb}`
   containerDesc.textContent = render.description || 'Описание недоступно'
   buttonText.textContent = 'Найти другой фильм'
-  containerElement.classList.add('show') 
+  
+    containerElement.classList.add('show') 
+  
   main.append(containerElement)
 }
 
