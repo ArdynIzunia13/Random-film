@@ -9,54 +9,23 @@ const main = document.querySelector('.main')
 const button =  document.querySelector('.button_main')
 const buttonText = document.querySelector('.button_text')
 const containerTemplate = document.querySelector('#card-template').content
-
-
-function removeCard() {
-  const deleteCard = document.querySelector('.card-template')
-  if(deleteCard) {
-    deleteCard.remove()
-  }
-}
-
-function createCardElement() {
-  return containerTemplate.querySelector('.card-template').cloneNode(true)
-}
+const containerElement = containerTemplate.querySelector('.card-template').cloneNode(true)
+const containerImg = containerElement.querySelector('.img-card')
+const containerTitle = containerElement.querySelector('.card-title')
+const containerYear = containerElement.querySelector('.card-year')
+const containerRaiting = containerElement.querySelector('.card-raiting')
+const containerDesc = containerElement.querySelector('.card-text')
 
 function renderCard(render) {
-  removeCard()
-
-  const containerElement = createCardElement()
-  const containerImg = containerElement.querySelector('.img-card')
-  const containerTitle = containerElement.querySelector('.card-title')
-  const containerGenre = containerElement.querySelector('.card-genre')
-  const containerYear = containerElement.querySelector('.card-year')
-  const containerRaiting = containerElement.querySelector('.card-raiting')
-  const containerDesc = containerElement.querySelector('.card-text')
-  
-  // containerImg.src = render.posterUrl
   containerImg.src = render.poster?.url || 'no-poster'
-  
-
   containerTitle.textContent = render.name || render.alternativeName || 'Без названия'
-  
-
   containerGenre.textContent = `Жанр: ${render.genres.map(genres => genres.name)}`
-  
-
   containerYear.textContent = `Год: ${render.year}`
-  
-
   containerRaiting.textContent = `Рейтинг КиноПоиск: ${render.rating.kp || '-'}`
-  
-
   containerElement.querySelector('.imdb').textContent = `Рейтинг IMDB: ${render.rating.imdb}`
-  
-
   containerDesc.textContent = render.description || 'Описание недоступно'
-  
-
   buttonText.textContent = 'Найти другой фильм'
-
+  containerElement.classList.add('show') 
   main.append(containerElement)
 
   setTimeout(() => {
@@ -81,7 +50,7 @@ function animateCardContent(cardElement) {
       setTimeout(() => {
         element.style.transition = 'opacity 0.5s ease'
         element.style.opacity = '1'
-      }, index * 100) // Задержка 100ms между каждым элементом
+      }, index * 100) 
     }
   })
 }
