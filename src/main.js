@@ -33,21 +33,31 @@ function renderCard(render) {
   const containerRaiting = containerElement.querySelector('.card-raiting')
   const containerDesc = containerElement.querySelector('.card-text')
   
-  // containerImg.src = render.posterUrl
   containerImg.src = render.poster?.url || 'no-poster'
   containerTitle.textContent = render.name || render.alternativeName || 'Без названия'
   containerGenre.textContent = `Жанр: ${render.genres.map(genres => genres.name)}`
-  containerYear.textContent = `Год: ${render.year}`
+  containerYear.textContent = `Год: ${render.year || '-'}`
   containerRaiting.textContent = `Рейтинг КиноПоиск: ${render.rating.kp || '-'}`
   containerElement.querySelector('.imdb').textContent = `Рейтинг IMDB: ${render.rating.imdb}`
   containerDesc.textContent = render.description || 'Описание недоступно'
   buttonText.textContent = 'Найти другой фильм'
   main.append(containerElement)
+  
+
+containerElement.addEventListener('click', () => {
+  openKinopoiskPage(render.id, render.name)
+})
 
   setTimeout(() => {
     containerElement.classList.add('show')
     setTimeout(() => animateCardContent(containerElement), 300)
   },10) 
+}
+
+function openKinopoiskPage(movieId, movieName) {
+  const kinopoiskUrl = `https://www.kinopoisk.ru/film/${movieId}/`
+  window.open(kinopoiskUrl, '_blank')
+  console.log(`Открываем фильм: ${movieName} (ID: ${movieId})`)
 }
 
 function animateCardContent(cardElement) {
@@ -66,7 +76,7 @@ function animateCardContent(cardElement) {
       setTimeout(() => {
         element.style.transition = 'opacity 0.5s ease'
         element.style.opacity = '1'
-      }, index * 100) // Задержка 100ms между каждым элементом
+      }, index * 100) 
     }
   })
 }
@@ -93,17 +103,3 @@ function renderApi() {
 }
 
 button.addEventListener('click', renderApi)
-
-//     fetch('https://kinopoiskapiunofficial.tech/api/v2.2/films/301', {
-//     method: 'GET',
-//     headers: {
-//         'X-API-KEY': '241abf13-9c76-4e3e-9842-ec7c0fc994a0',
-//         'Content-Type': 'application/json',
-//     },
-// })
-//     .then(res => res.json())
-//     .then((render) => {
-//              renderCard(render)
-//              console.log(render)
-//      })
-//     .catch(err => console.log(err))
